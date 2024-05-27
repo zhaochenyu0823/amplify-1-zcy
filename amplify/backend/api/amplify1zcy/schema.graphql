@@ -7,11 +7,9 @@ type Todo @model {
   name: String!
   description: String
 }
-
 type Info @model {
   userId: ID!
   name: String!
   phone: String!
   address: String!
 }
-
