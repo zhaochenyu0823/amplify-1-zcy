@@ -3,7 +3,8 @@ import Inform from './Inform';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { MenuExample } from './TestReact';
 import { Breadcrumbs, Card, Grid } from '@aws-amplify/ui-react';
-import AddInfo from './AddUserAddress';
+import AddInfo from './AddInfo';
+import InfoList from './InfoList';
 
 const NavBar = () => {
   return (
@@ -27,13 +28,6 @@ const NavBar = () => {
       >
         <Breadcrumbs.Container>
           <Breadcrumbs.Item>
-            <Breadcrumbs.Separator />
-            <Breadcrumbs.Link href='/app' >
-              ButtonAppNew
-            </Breadcrumbs.Link>
-            <Breadcrumbs.Separator />
-          </Breadcrumbs.Item>
-          <Breadcrumbs.Item>
             <Breadcrumbs.Link href='/inform'  >
               お知らせ
             </Breadcrumbs.Link>
@@ -46,20 +40,14 @@ const NavBar = () => {
             <Breadcrumbs.Separator />
           </Breadcrumbs.Item>
           <Breadcrumbs.Item>
-            <Breadcrumbs.Link href='/addressList' >
-              AddressList
+            <Breadcrumbs.Link href='/infoList' >
+              InfoList
             </Breadcrumbs.Link>
             <Breadcrumbs.Separator />
           </Breadcrumbs.Item>
           <Breadcrumbs.Item>
             <Breadcrumbs.Link href='/addInfo' >
               AddInfo
-            </Breadcrumbs.Link>
-            <Breadcrumbs.Separator />
-          </Breadcrumbs.Item>
-          <Breadcrumbs.Item>
-            <Breadcrumbs.Link href='/addTodo' >
-              AddTodo
             </Breadcrumbs.Link>
             <Breadcrumbs.Separator />
           </Breadcrumbs.Item>
@@ -76,6 +64,7 @@ const NavBar = () => {
             <Route path="/inform" element={<Inform />} />
             <Route path="/test" element={<MenuExample />} />
             <Route path="/addInfo" element={<AddInfo />} />
+            <Route path="/infoList" element={<InfoList />} />
           </Routes>
         </Router>
       </Card>
