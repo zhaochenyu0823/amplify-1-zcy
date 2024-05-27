@@ -3,6 +3,7 @@ import Inform from './Inform';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { MenuExample } from './TestReact';
 import { Breadcrumbs, Card, Grid } from '@aws-amplify/ui-react';
+import AddInfo from './AddUserAddress';
 
 const NavBar = () => {
   return (
@@ -51,8 +52,8 @@ const NavBar = () => {
             <Breadcrumbs.Separator />
           </Breadcrumbs.Item>
           <Breadcrumbs.Item>
-            <Breadcrumbs.Link href='/addUserAddress' >
-              AddAddress
+            <Breadcrumbs.Link href='/addInfo' >
+              AddInfo
             </Breadcrumbs.Link>
             <Breadcrumbs.Separator />
           </Breadcrumbs.Item>
@@ -74,6 +75,7 @@ const NavBar = () => {
           <Routes>
             <Route path="/inform" element={<Inform />} />
             <Route path="/test" element={<MenuExample />} />
+            <Route path="/addInfo" element={<AddInfo />} />
           </Routes>
         </Router>
       </Card>
