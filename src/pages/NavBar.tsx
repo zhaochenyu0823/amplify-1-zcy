@@ -1,12 +1,8 @@
 
 import Inform from './Inform';
-import App from './App';
-import AddressList from './AddressList';
-import AddUserAddress from './AddUserAddress';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { MenuExample } from './TestReact';
 import { Breadcrumbs, Card, Grid } from '@aws-amplify/ui-react';
-import AddToDo from './AddToDo';
 
 const NavBar = () => {
   return (
@@ -76,12 +72,8 @@ const NavBar = () => {
       >
         <Router>
           <Routes>
-            <Route path="/app" element={<App />} />
             <Route path="/inform" element={<Inform />} />
             <Route path="/test" element={<MenuExample />} />
-           <Route path="/addressList" element={<AddressList />} />
-           <Route path="/addUserAddress" element={<AddUserAddress />} />
-           <Route path="/addTodo" element={<AddToDo />} />
           </Routes>
         </Router>
       </Card>
