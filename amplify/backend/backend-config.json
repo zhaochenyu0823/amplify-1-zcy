@@ -25,6 +25,14 @@
           ],
           "category": "function",
           "resourceName": "amplify1zcy4cb2bdf4"
+        },
+        {
+          "attributes": [
+            "Name",
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "todoFunction"
         }
       ],
       "providerPlugin": "awscloudformation",
@@ -64,6 +72,11 @@
       "build": true,
       "providerPlugin": "awscloudformation",
       "service": "Lambda"
+    },
+    "todoFunction": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
     }
   },
   "parameters": {
@@ -80,6 +93,22 @@
         {
           "category": "function",
           "resourceName": "amplify1zcy4cb2bdf4"
+        }
+      ]
+    },
+    "AMPLIFY_function_todoFunction_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "todoFunction"
+        }
+      ]
+    },
+    "AMPLIFY_function_todoFunction_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "todoFunction"
         }
       ]
     }

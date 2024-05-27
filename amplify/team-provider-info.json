@@ -46,6 +46,10 @@
         "amplify1zcy4cb2bdf4": {
           "deploymentBucketName": "amplify-amplify1zcy-devzcy-8d45c-deployment",
           "s3Key": "amplify-builds/amplify1zcy4cb2bdf4-346b6e4c4f4b4a49452f-build.zip"
+        },
+        "todoFunction": {
+          "deploymentBucketName": "amplify-amplify1zcy-devzcy-8d45c-deployment",
+          "s3Key": "amplify-builds/todoFunction-666474367a767250414c-build.zip"
         }
       }
     }
