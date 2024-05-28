@@ -5,6 +5,7 @@ import { MenuExample } from './TestReact';
 import { Breadcrumbs, Card, Grid } from '@aws-amplify/ui-react';
 import AddInfo from './AddInfo';
 import InfoList from './InfoList';
+import TestApiTodo from './TestAPI';
 
 const NavBar = () => {
   return (
@@ -28,26 +29,32 @@ const NavBar = () => {
       >
         <Breadcrumbs.Container>
           <Breadcrumbs.Item>
-            <Breadcrumbs.Link href='/inform'  >
-              お知らせ
+            <Breadcrumbs.Link href='/test' >
+              测试React组件
             </Breadcrumbs.Link>
             <Breadcrumbs.Separator />
           </Breadcrumbs.Item>
           <Breadcrumbs.Item>
-            <Breadcrumbs.Link href='/test' >
-              TestReact
+            <Breadcrumbs.Link href='/testapi' >
+              测试ApiTodo
             </Breadcrumbs.Link>
             <Breadcrumbs.Separator />
           </Breadcrumbs.Item>
           <Breadcrumbs.Item>
             <Breadcrumbs.Link href='/infoList' >
-              InfoList
+              Info列表
             </Breadcrumbs.Link>
             <Breadcrumbs.Separator />
           </Breadcrumbs.Item>
           <Breadcrumbs.Item>
             <Breadcrumbs.Link href='/addInfo' >
-              AddInfo
+              添加Info
+            </Breadcrumbs.Link>
+            <Breadcrumbs.Separator />
+          </Breadcrumbs.Item>
+          <Breadcrumbs.Item>
+            <Breadcrumbs.Link href='/inform'  >
+              お知らせ
             </Breadcrumbs.Link>
             <Breadcrumbs.Separator />
           </Breadcrumbs.Item>
@@ -65,6 +72,7 @@ const NavBar = () => {
             <Route path="/test" element={<MenuExample />} />
             <Route path="/addInfo" element={<AddInfo />} />
             <Route path="/infoList" element={<InfoList />} />
+            <Route path="/testapi" element={<TestApiTodo />} />
           </Routes>
         </Router>
       </Card>

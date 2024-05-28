@@ -49,7 +49,7 @@
         },
         "todoFunction": {
           "deploymentBucketName": "amplify-amplify1zcy-devzcy-8d45c-deployment",
-          "s3Key": "amplify-builds/todoFunction-666474367a767250414c-build.zip"
+          "s3Key": "amplify-builds/todoFunction-7061766a47436b383543-build.zip"
         }
       }
     }
