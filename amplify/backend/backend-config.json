@@ -33,6 +33,14 @@
           ],
           "category": "function",
           "resourceName": "todoFunction"
+        },
+        {
+          "attributes": [
+            "Name",
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "updatezcy"
         }
       ],
       "providerPlugin": "awscloudformation",
@@ -77,6 +85,12 @@
       "build": true,
       "providerPlugin": "awscloudformation",
       "service": "Lambda"
+    },
+    "updatezcy": {
+      "build": true,
+      "dependsOn": [],
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
     }
   },
   "parameters": {
@@ -109,6 +123,30 @@
         {
           "category": "function",
           "resourceName": "todoFunction"
+        }
+      ]
+    },
+    "AMPLIFY_function_updatezcy_apiKey": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "updatezcy"
+        }
+      ]
+    },
+    "AMPLIFY_function_updatezcy_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "updatezcy"
+        }
+      ]
+    },
+    "AMPLIFY_function_updatezcy_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "updatezcy"
         }
       ]
     }

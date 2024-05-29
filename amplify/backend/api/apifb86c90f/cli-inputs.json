@@ -14,6 +14,25 @@
       "permissions": {
         "setting": "open"
       }
+    },
+    "/update": {
+      "name": "/update",
+      "lambdaFunction": "updatezcy",
+      "permissions": {
+        "setting": "protected",
+        "auth": [
+          "create",
+          "read",
+          "update",
+          "delete"
+        ],
+        "guest": [
+          "create",
+          "read",
+          "update",
+          "delete"
+        ]
+      }
     }
   }
 }
