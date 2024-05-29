@@ -36,7 +36,12 @@
     "categories": {
       "auth": {
         "amplify1zcyfb220cab": {},
-        "amplify1zcy0d8616cd": {}
+        "amplify1zcy": {
+          "userPoolId": "ap-northeast-1_ep4dPA24T",
+          "userPoolName": "changepassword",
+          "webClientId": "4up110ophn60tpa1e25iklsnpd",
+          "nativeClientId": "4up110ophn60tpa1e25iklsnpd"
+        }
       },
       "api": {
         "amplify1zcy": {},
@@ -56,6 +61,10 @@
           "apiKey": "123",
           "deploymentBucketName": "amplify-amplify1zcy-devzcy-8d45c-deployment",
           "s3Key": "amplify-builds/updatezcy-7569346e565179755051-build.zip"
+        },
+        "checkpassword": {
+          "deploymentBucketName": "amplify-amplify1zcy-devzcy-8d45c-deployment",
+          "s3Key": "amplify-builds/checkpassword-7068574b4b68504f4b48-build.zip"
         }
       }
     }

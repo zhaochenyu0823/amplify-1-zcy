@@ -11,19 +11,15 @@ export type AmplifyDependentResourcesAttributes = {
       "RootUrl": "string"
     }
   },
-  "auth": {
-    "amplify1zcy0d8616cd": {
-      "AppClientID": "string",
-      "AppClientIDWeb": "string",
-      "IdentityPoolId": "string",
-      "IdentityPoolName": "string",
-      "UserPoolArn": "string",
-      "UserPoolId": "string",
-      "UserPoolName": "string"
-    }
-  },
   "function": {
     "amplify1zcy4cb2bdf4": {
+      "Arn": "string",
+      "LambdaExecutionRole": "string",
+      "LambdaExecutionRoleArn": "string",
+      "Name": "string",
+      "Region": "string"
+    },
+    "checkpassword": {
       "Arn": "string",
       "LambdaExecutionRole": "string",
       "LambdaExecutionRoleArn": "string",

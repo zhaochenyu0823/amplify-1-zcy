@@ -48,35 +48,21 @@
     }
   },
   "auth": {
-    "amplify1zcy0d8616cd": {
+    "amplify1zcy": {
       "customAuth": false,
       "dependsOn": [],
-      "frontendAuthConfig": {
-        "mfaConfiguration": "OFF",
-        "mfaTypes": [
-          "SMS"
-        ],
-        "passwordProtectionSettings": {
-          "passwordPolicyCharacters": [],
-          "passwordPolicyMinLength": 8
-        },
-        "signupAttributes": [
-          "EMAIL"
-        ],
-        "socialProviders": [],
-        "usernameAttributes": [
-          "EMAIL"
-        ],
-        "verificationMechanisms": [
-          "EMAIL"
-        ]
-      },
       "providerPlugin": "awscloudformation",
-      "service": "Cognito"
+      "service": "Cognito",
+      "serviceType": "imported"
     }
   },
   "function": {
     "amplify1zcy4cb2bdf4": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
+    "checkpassword": {
       "build": true,
       "providerPlugin": "awscloudformation",
       "service": "Lambda"
@@ -94,6 +80,38 @@
     }
   },
   "parameters": {
+    "AMPLIFY_auth_amplify1zcy_nativeClientId": {
+      "usedBy": [
+        {
+          "category": "auth",
+          "resourceName": "amplify1zcy"
+        }
+      ]
+    },
+    "AMPLIFY_auth_amplify1zcy_userPoolId": {
+      "usedBy": [
+        {
+          "category": "auth",
+          "resourceName": "amplify1zcy"
+        }
+      ]
+    },
+    "AMPLIFY_auth_amplify1zcy_userPoolName": {
+      "usedBy": [
+        {
+          "category": "auth",
+          "resourceName": "amplify1zcy"
+        }
+      ]
+    },
+    "AMPLIFY_auth_amplify1zcy_webClientId": {
+      "usedBy": [
+        {
+          "category": "auth",
+          "resourceName": "amplify1zcy"
+        }
+      ]
+    },
     "AMPLIFY_function_amplify1zcy4cb2bdf4_deploymentBucketName": {
       "usedBy": [
         {
@@ -107,6 +125,22 @@
         {
           "category": "function",
           "resourceName": "amplify1zcy4cb2bdf4"
+        }
+      ]
+    },
+    "AMPLIFY_function_checkpassword_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "checkpassword"
+        }
+      ]
+    },
+    "AMPLIFY_function_checkpassword_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "checkpassword"
         }
       ]
     },
