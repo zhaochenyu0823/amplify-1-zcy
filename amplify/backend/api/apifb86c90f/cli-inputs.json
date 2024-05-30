@@ -33,6 +33,13 @@
           "delete"
         ]
       }
+    },
+    "/info": {
+      "name": "/info",
+      "lambdaFunction": "info",
+      "permissions": {
+        "setting": "open"
+      }
     }
   }
 }

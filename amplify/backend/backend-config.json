@@ -41,6 +41,14 @@
           ],
           "category": "function",
           "resourceName": "updatezcy"
+        },
+        {
+          "attributes": [
+            "Name",
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "info"
         }
       ],
       "providerPlugin": "awscloudformation",
@@ -62,7 +70,7 @@
       "providerPlugin": "awscloudformation",
       "service": "Lambda"
     },
-    "checkpassword": {
+    "info": {
       "build": true,
       "providerPlugin": "awscloudformation",
       "service": "Lambda"
@@ -128,19 +136,19 @@
         }
       ]
     },
-    "AMPLIFY_function_checkpassword_deploymentBucketName": {
+    "AMPLIFY_function_info_deploymentBucketName": {
       "usedBy": [
         {
           "category": "function",
-          "resourceName": "checkpassword"
+          "resourceName": "info"
         }
       ]
     },
-    "AMPLIFY_function_checkpassword_s3Key": {
+    "AMPLIFY_function_info_s3Key": {
       "usedBy": [
         {
           "category": "function",
-          "resourceName": "checkpassword"
+          "resourceName": "info"
         }
       ]
     },

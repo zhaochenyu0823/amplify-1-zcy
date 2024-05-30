@@ -7,15 +7,7 @@ See the License for the specific language governing permissions and limitations 
 */
 
 
-/* Amplify Params - DO NOT EDIT
-	ENV
-	REGION
-	API_KEY
-Amplify Params - DO NOT EDIT */
-const { DynamoDBClient } = require('@aws-sdk/client-dynamodb');
-const { DeleteCommand, DynamoDBDocumentClient, GetCommand, PutCommand, QueryCommand, ScanCommand } = require('@aws-sdk/lib-dynamodb');
-const ddbClient = new DynamoDBClient({});
-const ddbDocClient = DynamoDBDocumentClient.from(ddbClient);
+
 
 const express = require('express')
 const bodyParser = require('body-parser')
@@ -38,45 +30,26 @@ app.use(function(req, res, next) {
  * Example get method *
  **********************/
 
-app.get('/update', async function(req, res) {
+app.get('/info', function(req, res) {
   // Add your code here
-  
-  var params = {
-    TableName: 'Info',
-    Select: 'ALL_ATTRIBUTES',
-    };
-
-    try {
-      const data = await ddbDocClient.send(new ScanCommand(params));
-      res.json(data.Items);
-      res.json({success: 'get call succeed!-1', url: req.url,date:data.Items});
-    } catch (err) {
-      res.statusCode = 500;
-      res.json({error: 'Could not load items: ' + err.message});
-      console.log('### getAll error!',err)
-    }
+  res.json({success: 'get call succeed!', url: req.url});
 });
 
-app.get('/update/*', function(req, res) {
+app.get('/info/*', function(req, res) {
   // Add your code here
-  res.json({
-    success: 'get call succeed!-2', 
-    url: req.url,
-    id:req.query.id,
-    pathParam:req.params.params
-  });
+  res.json({success: 'get call succeed!', url: req.url});
 });
 
 /****************************
 * Example post method *
 ****************************/
 
-app.post('/update', function(req, res) {
+app.post('/info', function(req, res) {
   // Add your code here
   res.json({success: 'post call succeed!', url: req.url, body: req.body})
 });
 
-app.post('/update/*', function(req, res) {
+app.post('/info/*', function(req, res) {
   // Add your code here
   res.json({success: 'post call succeed!', url: req.url, body: req.body})
 });
@@ -85,12 +58,12 @@ app.post('/update/*', function(req, res) {
 * Example put method *
 ****************************/
 
-app.put('/update', function(req, res) {
+app.put('/info', function(req, res) {
   // Add your code here
   res.json({success: 'put call succeed!', url: req.url, body: req.body})
 });
 
-app.put('/update/*', function(req, res) {
+app.put('/info/*', function(req, res) {
   // Add your code here
   res.json({success: 'put call succeed!', url: req.url, body: req.body})
 });
@@ -99,12 +72,12 @@ app.put('/update/*', function(req, res) {
 * Example delete method *
 ****************************/
 
-app.delete('/update', function(req, res) {
+app.delete('/info', function(req, res) {
   // Add your code here
   res.json({success: 'delete call succeed!', url: req.url});
 });
 
-app.delete('/update/*', function(req, res) {
+app.delete('/info/*', function(req, res) {
   // Add your code here
   res.json({success: 'delete call succeed!', url: req.url});
 });

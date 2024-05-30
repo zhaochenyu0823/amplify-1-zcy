@@ -1,14 +1,14 @@
 import React, { useEffect, useState } from 'react';
-import { get, put, post ,del} from 'aws-amplify/api';
+import { get, put, post } from 'aws-amplify/api';
 
 const apiName = 'apifb86c90f';
 
 // 定义一个异步函数，用于从API Gateway获取数据
-async function getzcy() {
+async function getTodo() {
   try {
     const restOperation = get({
       apiName: apiName,
-      path: '/info/3456',
+      path: '/todo/3456',
       options: {
         queryParams: {
           id: '123'
@@ -30,7 +30,7 @@ async function getzcy() {
   }
 }
 
-const TestUpdatezcy: React.FC = () => {
+const TestApiTodo: React.FC = () => {
   const [data, setData] = useState<any>(null);
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
@@ -38,7 +38,7 @@ const TestUpdatezcy: React.FC = () => {
   useEffect(() => {
     const getData = async () => {
       try {
-        const result = await getzcy();
+        const result = await getTodo();
         setData(result);
       } catch (err) {
         if (err instanceof Error) {
@@ -58,7 +58,7 @@ const TestUpdatezcy: React.FC = () => {
     try {
       const restOperation = post({
         apiName: apiName,
-        path: '/info',
+        path: '/todo',
         options: {
           body: {
             message: 'Mow the lawn'
@@ -81,11 +81,12 @@ const TestUpdatezcy: React.FC = () => {
 
   const updateTodo = async () => {
     try {
+      const todo = { name: 'My first todo', message: 'Hello world!' };
       const restOperation = put({
         apiName: apiName,
-        path: '/info/1',
+        path: '/todo/1',
         options: {
-          body: { name: 'My first todo', message: 'Hello world!' }
+          body: todo
         }
       });
       const { body } = await restOperation.response;
@@ -93,33 +94,6 @@ const TestUpdatezcy: React.FC = () => {
       setData(response);
       
       console.log('PUT call succeeded: ', response);
-    } catch (e) {
-      if (e instanceof Error) {
-        console.log('PUT call failed: ', e.message);
-      } else {
-        setError('An unknown error occurred');
-      }
-    }
-  };
-
-
-  const deleteTodo = async () => {
-    try {
-      const restOperation = del({
-        apiName: apiName,
-        path: '/info/1',
-        options: {
-          queryParams: {
-            id: '123'
-          }
-        }
-      });
-
-      const response = await restOperation.response;
-      console.log('del response: ', response);
-    
-      
-      console.log('PUT call succeeded: ');
     } catch (e) {
       if (e instanceof Error) {
         console.log('PUT call failed: ', e.message);
@@ -142,10 +116,9 @@ const TestUpdatezcy: React.FC = () => {
       <h1>TestAPI</h1>
       <pre>{JSON.stringify(data, null, 2)}</pre>
       <button onClick={updateTodo}>Update Todo</button>
-      <button onClick={postTodo}> Post Todo</button>
-      <button onClick={deleteTodo}>Delete Todo</button>
+      <button onClick={postTodo}>Test Post Todo</button>
     </div>
   );
 };
 
-export default TestUpdatezcy;
+export default TestApiTodo;

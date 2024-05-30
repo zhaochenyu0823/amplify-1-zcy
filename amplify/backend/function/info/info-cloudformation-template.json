@@ -47,12 +47,12 @@
         "FunctionName": {
           "Fn::If": [
             "ShouldNotCreateEnvResources",
-            "checkpassword",
+            "info",
             {
               "Fn::Join": [
                 "",
                 [
-                  "checkpassword",
+                  "info",
                   "-",
                   {
                     "Ref": "env"
@@ -89,12 +89,12 @@
         "RoleName": {
           "Fn::If": [
             "ShouldNotCreateEnvResources",
-            "amplify1zcyLambdaRole47fdbb72",
+            "amplify1zcyLambdaRolea61b368e",
             {
               "Fn::Join": [
                 "",
                 [
-                  "amplify1zcyLambdaRole47fdbb72",
+                  "amplify1zcyLambdaRolea61b368e",
                   "-",
                   {
                     "Ref": "env"

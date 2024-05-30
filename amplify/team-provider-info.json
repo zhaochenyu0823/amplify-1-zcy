@@ -60,11 +60,11 @@
         "updatezcy": {
           "apiKey": "123",
           "deploymentBucketName": "amplify-amplify1zcy-devzcy-8d45c-deployment",
-          "s3Key": "amplify-builds/updatezcy-7569346e565179755051-build.zip"
+          "s3Key": "amplify-builds/updatezcy-71495757412b704c4846-build.zip"
         },
-        "checkpassword": {
+        "info": {
           "deploymentBucketName": "amplify-amplify1zcy-devzcy-8d45c-deployment",
-          "s3Key": "amplify-builds/checkpassword-7068574b4b68504f4b48-build.zip"
+          "s3Key": "amplify-builds/info-69434e6346327162625a-build.zip"
         }
       }
     }
