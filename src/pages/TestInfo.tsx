@@ -30,7 +30,8 @@ async function getzcy() {
   }
 }
 
-const TestUpdatezcy: React.FC = () => {
+const TestInfo: React.FC = () => {
+  const [name, setName] = useState('');
   const [data, setData] = useState<any>(null);
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
@@ -125,6 +126,27 @@ const TestUpdatezcy: React.FC = () => {
   };
 
 
+  const getInfoListByName = async () => {
+    try {
+      const restOperation = get({
+        apiName: apiName,
+        path: '/info/name'
+      });
+      const { body } = await restOperation.response;
+      const response = await body.json();
+      setData(response);
+      
+      console.log('PUT call succeeded: ', response);
+    } catch (e) {
+      if (e instanceof Error) {
+        console.log('PUT call failed: ', e.message);
+      } else {
+        setError('An unknown error occurred');
+      }
+    }
+  };
+
+
   const deleteTodo = async () => {
     try {
       const restOperation = del({
@@ -169,8 +191,16 @@ const TestUpdatezcy: React.FC = () => {
       <button onClick={postTodo}> Post Todo</button>
       <button onClick={deleteTodo}>Delete Todo</button>
       <button onClick={getInfoList}>get   InfoList</button>
+
+      <input
+        type="text"
+        value={name}
+        onChange={(e) => setName(e.target.value)}
+        placeholder="Enter name"
+      />
+      <button onClick={getInfoListByName}>Search</button>
     </div>
   );
 };
 
-export default TestUpdatezcy;
+export default TestInfo;

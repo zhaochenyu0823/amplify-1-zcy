@@ -42,7 +42,23 @@ app.use(function(req, res, next) {
 app.get('/info', async function(req, res) {
   // Add your code here
   var params = {
-    TableName: 'Info',
+    TableName: 'Info-vbs73glonja6ro6hpozm4qngku-devzcy',
+    Select: 'ALL_ATTRIBUTES',
+    };
+    try {
+      const data = await ddbDocClient.send(new ScanCommand(params));
+      res.json(data.Items);
+    } catch (err) {
+      res.statusCode = 500;
+      res.json(rr.message);
+    }   
+});
+
+
+app.get('/info/name/*', async function(req, res) {
+  // Add your code here
+  var params = {
+    TableName: 'Info-vbs73glonja6ro6hpozm4qngku-devzcy',
     Select: 'ALL_ATTRIBUTES',
     };
     try {
