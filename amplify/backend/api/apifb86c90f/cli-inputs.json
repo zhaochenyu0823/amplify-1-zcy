@@ -40,6 +40,13 @@
       "permissions": {
         "setting": "open"
       }
+    },
+    "/info/name": {
+      "name": "/info/name",
+      "lambdaFunction": "getinfobyname",
+      "permissions": {
+        "setting": "open"
+      }
     }
   }
 }
