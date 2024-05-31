@@ -103,6 +103,28 @@ const TestUpdatezcy: React.FC = () => {
   };
 
 
+
+  const getInfoList = async () => {
+    try {
+      const restOperation = get({
+        apiName: apiName,
+        path: '/info'
+      });
+      const { body } = await restOperation.response;
+      const response = await body.json();
+      setData(response);
+      
+      console.log('PUT call succeeded: ', response);
+    } catch (e) {
+      if (e instanceof Error) {
+        console.log('PUT call failed: ', e.message);
+      } else {
+        setError('An unknown error occurred');
+      }
+    }
+  };
+
+
   const deleteTodo = async () => {
     try {
       const restOperation = del({
@@ -137,6 +159,8 @@ const TestUpdatezcy: React.FC = () => {
     return <div>Error: {error}</div>;
   }
 
+  
+
   return (
     <div>
       <h1>TestAPI</h1>
@@ -144,6 +168,7 @@ const TestUpdatezcy: React.FC = () => {
       <button onClick={updateTodo}>Update Todo</button>
       <button onClick={postTodo}> Post Todo</button>
       <button onClick={deleteTodo}>Delete Todo</button>
+      <button onClick={getInfoList}>get   InfoList</button>
     </div>
   );
 };
