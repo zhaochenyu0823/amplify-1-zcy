@@ -130,7 +130,12 @@ const TestInfo: React.FC = () => {
     try {
       const restOperation = get({
         apiName: apiName,
-        path: '/info/name'
+        path: '/info/name',
+        options: {
+          queryParams: {
+            name: name
+          }
+        }
       });
       const { body } = await restOperation.response;
       const response = await body.json();

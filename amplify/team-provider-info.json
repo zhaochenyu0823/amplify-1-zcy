@@ -64,12 +64,13 @@
         },
         "info": {
           "deploymentBucketName": "amplify-amplify1zcy-devzcy-8d45c-deployment",
-          "s3Key": "amplify-builds/info-6d4c3952314d65633858-build.zip"
+          "s3Key": "amplify-builds/info-57346b3170616c614836-build.zip"
         },
         "getinfobyname": {
           "deploymentBucketName": "amplify-amplify1zcy-devzcy-8d45c-deployment",
-          "s3Key": "amplify-builds/getinfobyname-66375067636931332f4f-build.zip"
-        }
+          "s3Key": "amplify-builds/getinfobyname-727071504c5646376f6a-build.zip"
+        },
+        "testjava": {}
       }
     }
   }

@@ -8,6 +8,10 @@ See the License for the specific language governing permissions and limitations 
 
 
 
+const { DynamoDBClient } = require('@aws-sdk/client-dynamodb');
+const { DeleteCommand, DynamoDBDocumentClient, GetCommand, PutCommand, QueryCommand, ScanCommand } = require('@aws-sdk/lib-dynamodb');
+const ddbClient = new DynamoDBClient({});
+const ddbDocClient = DynamoDBDocumentClient.from(ddbClient);
 
 const express = require('express')
 const bodyParser = require('body-parser')
@@ -19,7 +23,7 @@ app.use(bodyParser.json())
 app.use(awsServerlessExpressMiddleware.eventContext())
 
 // Enable CORS for all methods
-app.use(function(req, res, next) {
+app.use(function (req, res, next) {
   res.header("Access-Control-Allow-Origin", "*")
   res.header("Access-Control-Allow-Headers", "*")
   next()
@@ -30,60 +34,65 @@ app.use(function(req, res, next) {
  * Example get method *
  **********************/
 
-app.get('/info/name', function(req, res) {
+app.get('/info/name', async function (req, res) {
   // Add your code here
-  res.json({success: 'get call succeed!infoname', url: req.url});
-});
-
-app.get('/info/name/*', function(req, res) {
-  // Add your code here
-  res.json({success: 'get call succeed!', url: req.url});
+  var params = {
+    TableName: 'Info-vbs73glonja6ro6hpozm4qngku-devzcy',
+    Select: 'ALL_ATTRIBUTES',
+    };
+    try {
+      const data = await ddbDocClient.send(new ScanCommand(params));
+      res.json(data.Items);
+    } catch (err) {
+      res.statusCode = 500;
+      res.json(err.message);
+    }   
 });
 
 /****************************
 * Example post method *
 ****************************/
 
-app.post('/info/name', function(req, res) {
+app.post('/info/name', function (req, res) {
   // Add your code here
-  res.json({success: 'post call succeed!', url: req.url, body: req.body})
+  res.json({ success: 'post call succeed!', url: req.url, body: req.body })
 });
 
-app.post('/info/name/*', function(req, res) {
+app.post('/info/name/*', function (req, res) {
   // Add your code here
-  res.json({success: 'post call succeed!', url: req.url, body: req.body})
+  res.json({ success: 'post call succeed!', url: req.url, body: req.body })
 });
 
 /****************************
 * Example put method *
 ****************************/
 
-app.put('/info/name', function(req, res) {
+app.put('/info/name', function (req, res) {
   // Add your code here
-  res.json({success: 'put call succeed!', url: req.url, body: req.body})
+  res.json({ success: 'put call succeed!', url: req.url, body: req.body })
 });
 
-app.put('/info/name/*', function(req, res) {
+app.put('/info/name/*', function (req, res) {
   // Add your code here
-  res.json({success: 'put call succeed!', url: req.url, body: req.body})
+  res.json({ success: 'put call succeed!', url: req.url, body: req.body })
 });
 
 /****************************
 * Example delete method *
 ****************************/
 
-app.delete('/info/name', function(req, res) {
+app.delete('/info/name', function (req, res) {
   // Add your code here
-  res.json({success: 'delete call succeed!', url: req.url});
+  res.json({ success: 'delete call succeed!', url: req.url });
 });
 
-app.delete('/info/name/*', function(req, res) {
+app.delete('/info/name/*', function (req, res) {
   // Add your code here
-  res.json({success: 'delete call succeed!', url: req.url});
+  res.json({ success: 'delete call succeed!', url: req.url });
 });
 
-app.listen(3000, function() {
-    console.log("App started")
+app.listen(3000, function () {
+  console.log("App started")
 });
 
 // Export the app object. When executing the application local this does nothing. However,

@@ -50,7 +50,7 @@ app.get('/info', async function(req, res) {
       res.json(data.Items);
     } catch (err) {
       res.statusCode = 500;
-      res.json(rr.message);
+      res.json(err.message);
     }   
 });
 /****************************
